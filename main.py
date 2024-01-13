@@ -9,9 +9,8 @@ while True:
     # 메뉴 출력
     print("\n\n자판기 프로그램")
     print("-----------------------")
-    print(f"1. {products[0]['name']}({products[0]['count']}개) : {products[0]['price']} 원")
-    print(f"2. {products[1]['name']}({products[1]['count']}개) : {products[1]['price']} 원")
-    print(f"3. {products[2]['name']}({products[2]['count']}개) : {products[2]['price']} 원")
+    for product in products:
+        print(f"{product['name']}({product['count']}개) : {product['price']} 원")
     print("-----------------------")
     print(f"현재 잔액 : {balance} 원")
     print("-----------------------")
