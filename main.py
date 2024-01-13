@@ -1,12 +1,4 @@
-balance = 0
-products = [
-    {"name": "콜라", "price": 2000, "count": 5},
-    {"name": "사이다", "price": 750, "count": 5},
-    {"name": "환타", "price": 1500, "count": 5}
-]
-
-while True:
-    # 메뉴 출력
+def display_menu(products, balance):
     print("\n\n자판기 프로그램")
     print("-----------------------")
     for i, product in enumerate(products):
@@ -21,34 +13,55 @@ while True:
     print("4. 종료")
     print("")
 
-    # 메뉴 입력
+
+def select_product(products, balance):
+    num = int(input("상품 번호 입력 : "))
+    product = products[num-1]
+    if product['count'] > 0 and balance >= product["price"]:
+        print(f">> {product['name']}를 구입 했습니다!")
+        balance = balance - product["price"]
+        product["count"] = product["count"] - 1
+    else:
+        print(f">> 상품을 구입할 수 없습니다.")
+    return balance
+
+
+def insert_money(balance):
+    money = int(input("투입 금액 입력 (원): "))
+    balance = balance + money
+    print(f">> {money}원이 투입되었습니다.")
+    print(f"현재 잔액 : {balance}")
+    return balance
+
+
+def return_balance(balance):
+    print(f">> {balance}원을 반환합니다.")
+    balance = 0
+    print(f"현재 잔액 : {balance}")
+    return balance
+
+
+balance = 0
+products = [
+    {"name": "콜라", "price": 2000, "count": 5},
+    {"name": "사이다", "price": 750, "count": 5},
+    {"name": "환타", "price": 1500, "count": 5}
+]
+
+while True:
+    display_menu(products, balance)
+    
     try:
         menu = int(input("메뉴 선택 : "))
     except:
         print(f">> 숫자로 메뉴를 입력해주세요!")
 
-    # 메뉴 비교
     if menu == 1:
-        # 상품 선택
-        num = int(input("상품 번호 입력 : "))
-        product = products[num-1]
-        if product['count'] > 0 and balance >= product["price"]:
-            print(f">> {product['name']}를 구입 했습니다!")
-            balance = balance - product["price"]
-            product["count"] = product["count"] - 1
-        else:
-            print(f">> 상품을 구입할 수 없습니다.")
+        balance = select_product(products, balance)
     elif menu == 2:
-        # 돈 투입
-        money = int(input("투입 금액 입력 (원): "))
-        balance = balance + money
-        print(f">> {money}원이 투입되었습니다.")
-        print(f"현재 잔액 : {balance}")
+        balance = insert_money(balance)
     elif menu == 3:
-        # 잔돈 반환
-        print(f">> {balance}원을 반환합니다.")
-        balance = 0
-        print(f"현재 잔액 : {balance}")
+        balance = return_balance(balance)
     elif menu == 4:
         print("프로그램 종료")
         break
