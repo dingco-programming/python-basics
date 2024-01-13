@@ -1,16 +1,16 @@
 balance = 0
 products = [
-    ["콜라", 2000, 5],
-    ["사이다", 750, 5],
-    ["환타", 1500, 5]
+    {"name": "콜라", "price": 2000, "count": 5},
+    {"name": "사이다", "price": 750, "count": 5},
+    {"name": "환타", "price": 1500, "count": 5}
 ]
 
 # 메뉴 출력
 print("자판기 프로그램")
 print("-----------------------")
-print(f"1. {products[0][0]}({products[0][2]}개) : {products[0][1]} 원")
-print(f"2. {products[1][0]}({products[1][2]}개) : {products[1][1]} 원")
-print(f"3. {products[2][0]}({products[2][2]}개) : {products[2][1]} 원")
+print(f"1. {products[0]['name']}({products[0]['count']}개) : {products[0]['price']} 원")
+print(f"2. {products[1]['name']}({products[1]['count']}개) : {products[1]['price']} 원")
+print(f"3. {products[2]['name']}({products[2]['count']}개) : {products[2]['price']} 원")
 print("-----------------------")
 print(f"현재 잔액 : {balance} 원")
 print("-----------------------")
