@@ -13,3 +13,7 @@ print("2. 돈 투입")
 print("3. 잔액 반환")
 print("4. 종료")
 print("")
+
+# 메뉴 입력
+menu = input("메뉴 선택 : ")
+print(menu)
