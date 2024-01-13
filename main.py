@@ -15,7 +15,10 @@ print("4. 종료")
 print("")
 
 # 메뉴 입력
-menu = int(input("메뉴 선택 : "))
+try:
+    menu = int(input("메뉴 선택 : "))
+except:
+    print(f">> 숫자로 메뉴를 입력해주세요!")
 
 # 메뉴 비교
 if menu == 1:
