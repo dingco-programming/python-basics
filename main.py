@@ -16,10 +16,18 @@ print("")
 
 # 메뉴 입력
 menu = int(input("메뉴 선택 : "))
-print(menu)
 
-# 비교연산자
-print(menu == 1)
-
-# type()
-print(type(menu))
+# 메뉴 비교
+if menu == 1:
+    # 상품 선택
+    print("상품 선택")
+elif menu == 2:
+    # 돈 투입
+    print("돈 투입")
+elif menu == 3:
+    # 잔돈 반환
+    print("잔돈 반환")
+elif menu == 4:
+    print("프로그램 종료")
+else:
+    print(f">> 1~4까지 숫자를 입력해주세요!")
