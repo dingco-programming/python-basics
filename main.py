@@ -30,7 +30,14 @@ except:
 # 메뉴 비교
 if menu == 1:
     # 상품 선택
-    print("상품 선택")
+    num = int(input("상품 번호 입력 : "))
+    product = products[num-1]
+    if product['count'] > 0 and balance >= product["price"]:
+        print(f">> {product['name']}를 구입 했습니다!")
+        balance = balance - product["price"]
+        product["count"] = product["count"] - 1
+    else:
+        print(f">> 상품을 구입할 수 없습니다.")
 elif menu == 2:
     # 돈 투입
     money = int(input("투입 금액 입력 (원): "))
