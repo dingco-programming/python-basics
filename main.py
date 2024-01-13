@@ -1,11 +1,16 @@
 balance = 0
+products = [
+    ["콜라", 2000, 5],
+    ["사이다", 750, 5],
+    ["환타", 1500, 5]
+]
 
 # 메뉴 출력
 print("자판기 프로그램")
 print("-----------------------")
-print("1. 콜라(5개) : 2000 원")
-print("2. 사이다(5개) : 750 원")
-print("3. 환타(5개) : 1500 원")
+print(f"1. {products[0][0]}({products[0][2]}개) : {products[0][1]} 원")
+print(f"2. {products[1][0]}({products[1][2]}개) : {products[1][1]} 원")
+print(f"3. {products[2][0]}({products[2][2]}개) : {products[2][1]} 원")
 print("-----------------------")
 print(f"현재 잔액 : {balance} 원")
 print("-----------------------")
