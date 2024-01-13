@@ -15,8 +15,11 @@ print("4. 종료")
 print("")
 
 # 메뉴 입력
-menu = input("메뉴 선택 : ")
+menu = int(input("메뉴 선택 : "))
 print(menu)
 
 # 비교연산자
 print(menu == 1)
+
+# type()
+print(type(menu))
