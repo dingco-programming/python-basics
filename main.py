@@ -1,4 +1,4 @@
-from vending_machine import VendingMachine
+from machines.vending_machine import VendingMachine
 
 products = [
     {"name": "콜라", "price": 2000, "count": 5},
